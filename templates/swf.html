@@ -1,0 +1,1478 @@
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<title>Clánek - eSubytchky vítají další hrácku - eSuba</title>
+<link href="skins/basic/eden-common.css" rel="stylesheet" type="text/css" media="all">
+<link href="skins/basic/esuba.css" rel="stylesheet" type="text/css" media="all">
+<meta name="keywords" lang="en" content="CoD,Call of Duty,PG,Progaming,Clan,Counter,Strike,video,Unreal,2004,NHL,FIFA">
+<meta name="keywords" lang="cs" content="CoD,Call of Duty,PG,Progaming,Klan,Counter,Strike,video,videa,demo,dema,mod,mody,patch,downloads,Unreal,2004,NHL,FIFA">
+<meta name="description" lang="en" content="">
+<meta name="description" lang="cs" content="">
+<meta name="generator" content="HandMade">
+<meta name="author" content="BlackFoot - webdesign@blackfoot.cz">
+<meta name="robots" content="all,follow">
+<meta name="copyright" content="© 2004, BlackFoot">
+<meta http-equiv="content-language" content="cs">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript" src="./js/animatedcollapse.js"></script>
+<script type="text/javascript" src="./js/esuba.js"></script><script type="text/javascript">
+<!--
+
+function CheckPoll(formular) {
+	var radioOk = 0;
+	for(i=0, n=document.eden_poll.eden_poll_vote.length; i < n; i++) {
+		if(document.eden_poll.eden_poll_vote[i].checked) radioOk = 1;
+	}
+	if(!radioOk) {
+		alert("Prosím vyberte nejakou volbu!");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/***********************************************
+*
+*		CALENDAR
+*
+***********************************************/
+function forOthers(e) {
+	if (document.getElementById('hint').style.visibility == "visible") {
+		hor = window.pageXOffset + window.innerWidth - document.getElementById('hint').offsetWidth - 20;
+		ver = window.pageYOffset + window.innerHeight - document.getElementById('hint').offsetHeight - 20;
+		posHor = window.pageXOffset + e.clientX + 10;
+		posVer = window.pageYOffset + e.clientY + 10;
+		posHor2 = window.pageXOffset + e.clientX - document.getElementById('hint').offsetWidth - 5;
+		posVer2 = window.pageYOffset + e.clientY - document.getElementById('hint').offsetHeight - 5;
+		if (posVer<ver){
+			document.getElementById('hint').style.top = posVer
+		} else {
+			document.getElementById('hint').style.top = posVer2;
+		}
+		if (posHor<hor){
+			document.getElementById('hint').style.left = posHor
+		} else {
+			document.getElementById('hint').style.left = posHor2
+		}
+	}
+}
+function ShowHint(x,y,s,e,n,w,z){
+	if (z == 1){
+		if (x == ''){x = "Bohužel nic";}
+		temp = '<table border="1" cellspacing="0" cellpadding="5" width="250" bordercolordark="#000000" bordercolor="#000000" bordercolorlight="#000000"><tr class="hlavicka_sloupcu"><td align="center" height="20" width="250">' + y + '&nbsp;<\/td><\/tr><tr bgcolor="#F5F4ED"><td class="cal_text" valign="top" height="200" width="250">' + s + ' - ' + e + '&nbsp;&nbsp;&nbsp;' + n + '<br>' + x + '<\/td><\/tr><\/table>';
+		document.getElementById('hint').innerHTML = temp;
+		document.getElementById('hint').style.width = w;
+		document.getElementById('hint').style.visibility = "visible";
+	}
+	if (z == 0){
+		document.getElementById('hint').style.visibility = "hidden";
+	}
+}
+
+function getMouse(e,a){
+	var x;
+	var y;
+	if (navigator.appName=="Microsoft Internet Explorer" || navigator.appName=="Opera"){
+		if (a == "right"){
+			x = window.event.x+9;
+		}
+		if (a == "left"){
+			x = window.event.x-250;
+		}
+		y = window.event.y+20;
+	}
+	if (navigator.appName=="Netscape"){
+		if (a == "right"){
+			x = e.screenX+11;
+		}
+		if (a == "left"){
+			x = e.screenX-250;
+		}
+		y = e.screenY-90;
+	}
+	x =  x + document.documentElement.scrollLeft;
+	y =  y + document.documentElement.scrollTop;
+	x = x.toString() + "px"
+	y = y.toString() + "px"
+	document.getElementById('hint').style.left = x;
+	document.getElementById('hint').style.top  = y;
+}
+/***********************************************
+* Show Hint script- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+var horizontal_offset="9px" //horizontal offset of hint box from anchor link
+
+/////No further editting needed
+
+var vertical_offset="0" //horizontal offset of hint box from anchor link. No need to change.
+var ie=document.all
+var ns6=document.getElementById&&!document.all
+
+function getposOffset(what, offsettype){
+	var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+	var parentEl=what.offsetParent;
+	while (parentEl!=null){
+		totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+		parentEl=parentEl.offsetParent;
+	}
+	return totaloffset;
+}
+
+function iecompattest(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+	var edgeoffset=(whichedge=="rightedge")? parseInt(horizontal_offset)*-1 : parseInt(vertical_offset)*-1
+	if (whichedge=="rightedge"){
+		var windowedge=ie && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-30 : window.pageXOffset+window.innerWidth-40
+		dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+		if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+			edgeoffset=dropmenuobj.contentmeasure+obj.offsetWidth+parseInt(horizontal_offset)
+	} else {
+		var windowedge=ie && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+		dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+		if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure)
+			edgeoffset=dropmenuobj.contentmeasure-obj.offsetHeight
+	}
+	return edgeoffset
+}
+
+function ShowHintText(menucontents, obj, e, tipwidth){
+	if ((ie||ns6) && document.getElementById("eden_hintbox")){
+		dropmenuobj=document.getElementById("eden_hintbox")
+		dropmenuobj.innerHTML=menucontents
+		dropmenuobj.style.left=dropmenuobj.style.top=-500
+		if (tipwidth!=""){
+			dropmenuobj.widthobj=dropmenuobj.style
+			dropmenuobj.widthobj.width=tipwidth
+		}
+		dropmenuobj.x=getposOffset(obj, "left")
+		dropmenuobj.y=getposOffset(obj, "top")
+		dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+obj.offsetWidth+"px"
+		dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+"px"
+		dropmenuobj.style.visibility="visible"
+		obj.onmouseout=hidetip
+	}
+}
+
+function hidetip(e){
+	dropmenuobj.style.visibility="hidden"
+	dropmenuobj.style.left="-500px"
+}
+
+function createhintbox(){
+	var divblock=document.createElement("div")
+	divblock.setAttribute("id", "eden_hintbox")
+	document.body.appendChild(divblock)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", createhintbox, false)
+else if (window.attachEvent)
+window.attachEvent("onload", createhintbox)
+else if (document.getElementById)
+window.onload=createhintbox
+//-->
+</script><style type="text/css">h1 {font-size:20px;}
+		h1 A {font-size:20px;}
+		h1 A:visited {font-size:20px;}
+		h1 A:hover {font-size:20px;}
+ .tabb { font-weight:bold; font-size:12px; font-family:Arial,Helvetica;}
+ .tan {FONT-SIZE: 12px; COLOR: navy; FONT-FAMILY: Arial,Helvetica; TEXT-ALIGN: center}
+ .tann {FONT-SIZE: 12px; COLOR: navy; FONT-FAMILY: Arial,Helvetica; TEXT-ALIGN: center}
+</style>
+<script type="text/javascript">
+<!--
+var uniquepageid="esuba";
+function kontrola(formular){re=new RegExp("^[^@\.]([\.]?[^@\.]+)*@([^@\.]+[\.]{1}[^@\.]+)+$");if(formular.jmeno.value==""){alert("Napište prosím své jméno.");return false;}else if(!re.test(formular.email.value)){alert("Vaše emailová adresa je neplatná! \n\ Zadejte ji, prosím, správne.");return false;}else {return true;}} var swidth=678;var sheight=20;var sspeed=3;var restart=sspeed;var rspeed=sspeed;var spause=2000;var sbcolor="";var singletext=new Array();
+singletext[0]='<nobr align="center" class=tabb> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">V.Žižkov-Príbram 1.8 - 3.3 - 3.96<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">C.Budej.-Liberec 2.65 - 2.8 - 2.66<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Kladno-Plzen 2.93 - 2.9 - 2.35<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Brno-Zlín 1.57 - 3.65 - 5<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Ml.Boleslav-Boh.Praha 1.37 - 4.2 - 6.99<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Olomouc-Ostrava 2.76 - 2.8 - 2.55<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Slavia-Teplice 1.37 - 4.2 - 6.99<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=16" title="Fotbal - 1.Cesko" target="_blank">Jablonec-Sparta 3.2 - 3 - 2.15<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=17" title="Fotbal - 1.Anglie" target="_blank">Tottenham-Blackburn 1.7 - 3.4 - 4.37<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=17" title="Fotbal - 1.Anglie" target="_blank">Sunderland-West Ham 2.15 - 3.1 - 3.09<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=17" title="Fotbal - 1.Anglie" target="_blank">Wigan-Everton 2.65 - 3 - 2.5<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Trinec-Plzen 2.2 - 4.15 - 2.41<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Pardubice-Litvínov 1.87 - 4.2 - 2.96<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">C.Budej.-K.Vary 2.1 - 4.2 - 2.52<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Sparta-Vítkovice 1.95 - 4.2 - 2.78<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Znojmo-Liberec 2.3 - 4.15 - 2.3<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Kladno-Slavia 2.52 - 4.2 - 2.1<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=20" title="Hokej - 1.Cesko" target="_blank">Ml.Boleslav-Zlín 2.25 - 4.15 - 2.35<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Carolina-Nashville 2.2 - 3.7 - 2.59<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Tampa Bay-N.Jersey 2.41 - 3.7 - 2.35<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Vancouver-Detroit 2.66 - 3.7 - 2.15<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">NY Rangers-Phoenix 1.8 - 3.8 - 3.42<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Montreal-NY Islanders 1.75 - 3.8 - 3.62<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Minnesota-Washington 2.15 - 3.7 - 2.66<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Florida-Carolina 2.35 - 3.7 - 2.41<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Anaheim-Colorado 1.9 - 3.8 - 3.11<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=93" title="Hokej - NHL" target="_blank">Philadelphia-Dallas 2.15 - 3.7 - 2.66<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=437" title="Florbal - Fortuna-Extraliga" target="_blank">Trinec-Brno 11.85 - 8.5 - 1.1<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=437" title="Florbal - Fortuna-Extraliga" target="_blank">Ml.Boleslav-Pepino 1.5 - 6 - 3.6<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=437" title="Florbal - Fortuna-Extraliga" target="_blank">Havírov-Tatran 5.32 - 6.5 - 1.3<\/a> &nbsp;&nbsp; <a href="http://www.ifortuna.cz/content.php?node=1271&competitionId=437" title="Florbal - Fortuna-Extraliga" target="_blank">Vítkovice-Znojmo 1.1 - 8.5 - 11.85<\/a><\/nobr>';var ii=0;var gekso=0;if(navigator.product&&navigator.product=="Gecko"){var agt=navigator.userAgent.toLowerCase();var rvStart=agt.indexOf('rv:');var rvEnd=agt.indexOf(')',rvStart);var check15=agt.substring(rvStart+3,rvEnd);if(parseFloat(check15)<1.8)gekso=1;}var operbr=0;operbr=navigator.userAgent.toLowerCase().indexOf('opera');function goup(){if(sspeed!=rspeed*16){sspeed=sspeed*2;restart=sspeed;}}function godown(){if(sspeed>rspeed){sspeed=sspeed/2;restart=sspeed;}}function start(){if(document.getElementById){ns6div=document.getElementById('iens6div');
+if(operbr!=-1)operdiv=document.getElementById('operaslider');ns6div.style.left=swidth+"px";ns6div.innerHTML=singletext[0];sizeup=ns6div.offsetWidth;if(operbr!=-1&&sizeup==swidth){operdiv.innerHTML=singletext[0];sizeup=operdiv.offsetWidth;}ns6scroll();}else if(document.layers){ns4layer=document.ns4div.document.ns4div1;ns4layer.left=swidth;ns4layer.document.write(singletext[0]);ns4layer.document.close();sizeup=ns4layer.document.width;ns4scroll();}else if(document.all){iediv=iens6div;iediv.style.pixelLeft=swidth+"px";iediv.innerHTML=singletext[0];sizeup=iediv.offsetWidth;iescroll();}}function iescroll(){
+if(iediv.style.pixelLeft>0&&iediv.style.pixelLeft<=sspeed){iediv.style.pixelLeft=0;setTimeout("iescroll()",spause);}else if(iediv.style.pixelLeft>=sizeup*-1){iediv.style.pixelLeft-=sspeed+"px";setTimeout("iescroll()",100);}else{if(ii==singletext.length-1)ii=0;else ii++;iediv.style.pixelLeft=swidth+"px";iediv.innerHTML=singletext[ii];sizeup=iediv.offsetWidth;iescroll();}}function ns4scroll(){if(ns4layer.left>0&&ns4layer.left<=sspeed){ns4layer.left=0;setTimeout("ns4scroll()",spause);}else if(ns4layer.left>=sizeup*-1){ns4layer.left-=sspeed;setTimeout("ns4scroll()",100);}else{
+if(ii==singletext.length-1)ii=0;else ii++;ns4layer.left=swidth;ns4layer.document.write(singletext[ii]);ns4layer.document.close();sizeup=ns4layer.document.width;ns4scroll();}}function ns6scroll(){if(parseInt(ns6div.style.left)>0&&parseInt(ns6div.style.left)<=sspeed){ns6div.style.left=0;setTimeout("ns6scroll()",spause);}else if(parseInt(ns6div.style.left)>=sizeup*-1){ns6div.style.left=parseInt(ns6div.style.left)-sspeed+"px";setTimeout("ns6scroll()",100);}else{if(ii==singletext.length-1)ii=0;else ii++;ns6div.style.left=swidth+"px";ns6div.innerHTML=singletext[ii];sizeup=ns6div.offsetWidth;if(operbr!=-1&&sizeup==swidth){operdiv.innerHTML=singletext[ii];sizeup=operdiv.offsetWidth;}ns6scroll();}}var menuAlignment='left';var topMenuSpacer=0;var activateSubOnClick=false;var activeMenuItem=false;var activeTabIndex=0;
+var MSIE=navigator.userAgent.indexOf('MSIE')>=0?true:false;var Opera=navigator.userAgent.indexOf('Opera')>=0?true:false;var navigatorVersion=navigator.appVersion.replace(/.*?MSIE ([0-9]\.[0-9]).*/g,'$1')/1;function showHide(){if(activeMenuItem){activeMenuItem.className='inactiveMenuItem';var theId=activeMenuItem.id.replace(/[^0-9]/g,'');document.getElementById('submenu_'+theId).style.display='none';var img=activeMenuItem.getElementsByTagName('IMG');if(img.length>0)img[0].style.display='none';if(img.length>0)img[1].style.display='none';}var img=this.getElementsByTagName('IMG');
+if(img.length>0)img[0].style.display='inline';if(img.length>0)img[1].style.display='inline';activeMenuItem=this;this.className='activeMenuItem';var theId=this.id.replace(/[^0-9]/g,'');document.getElementById('submenu_'+theId).style.display='block';}function initMenu(){var mainMenuObj=document.getElementById('menu_main');var menuItems=mainMenuObj.getElementsByTagName('A');if(document.all){mainMenuObj.style.visibility='hidden';document.getElementById('menu_sub').style.visibility='hidden';}var currentLeftPos=15;for(var no=0;no<menuItems.length;no++){if(activateSubOnClick)menuItems[no].onclick=showHide;else menuItems[no].onmouseover=showHide;menuItems[no].id='mainMenuItem'+(no+1);
+if(menuAlignment=='left')menuItems[no].style.left=currentLeftPos+'px';else menuItems[no].style.right=currentLeftPos+'px';currentLeftPos=currentLeftPos+menuItems[no].offsetWidth+topMenuSpacer;var img=menuItems[no].getElementsByTagName('IMG');if(img.length>0){img[0].style.display='none';img[1].style.display='none';if(MSIE&&!Opera&&navigatorVersion<7){img[0].style.bottom='-1px';img[0].style.right='-1px';}}if(no==activeTabIndex){menuItems[no].className='activeMenuItem';activeMenuItem=menuItems[no];var img=activeMenuItem.getElementsByTagName('IMG');if(img.length>0)img[0].style.display='inline';if(img.length>0)img[1].style.display='inline';}else menuItems[no].className='inactiveMenuItem';if(!document.all)menuItems[no].style.bottom='-1px';if(MSIE&&navigatorVersion<6)menuItems[no].style.bottom='-2px';}
+var mainMenuLinks=mainMenuObj.getElementsByTagName('A');var subCounter=1;var parentWidth=mainMenuObj.offsetWidth;while(document.getElementById('submenu_'+subCounter)){var subItem=document.getElementById('submenu_'+subCounter);if(subCounter==(activeTabIndex+1)){subItem.style.display='block';}else{subItem.style.display='none';}subCounter++;}if(document.all){mainMenuObj.style.visibility='visible';document.getElementById('menu_sub').style.visibility='visible';}document.getElementById('menu_sub').style.display='block';}var casovani;function RotateBest(id,state){
+if(state=="on"){for(var i=0;i<5;i++){document.getElementById('top_news_button_'+i).style.backgroundColor='#006fbf';document.getElementById('top_news_button_'+i).style.color='#ffffff';document.getElementById('article_'+i).style.visibility='hidden';}document.getElementById('article_'+id).style.visibility='visible';document.getElementById('top_news_button_'+id).style.color='#006fbf';document.getElementById('top_news_button_'+id).style.backgroundColor='#ffffff';if(id==4){id=-1;}casovani=setTimeout("RotateBest("+id+" + 1,'on')",10*500);}if(state=="off"){clearTimeout(casovani);
+for(var i=0;i<5;i++){document.getElementById('top_news_button_'+i).style.backgroundColor='#006fbf';document.getElementById('top_news_button_'+i).style.color='#ffffff';document.getElementById('article_'+i).style.visibility='hidden';}document.getElementById('article_'+id).style.visibility='visible';document.getElementById('top_news_button_'+id).style.color='#006fbf';document.getElementById('top_news_button_'+id).style.backgroundColor='#ffffff';}}var intImage=new Array();function swapImage(id){switch(intImage[id]){case 1:document.getElementById(id).src="http://www.esuba.eu/skins/basic/images/sys_icon_plus_2.gif";intImage[id]=2;return;case 2:document.getElementById(id).src="http://www.esuba.eu/skins/basic/images/sys_icon_minus_2.gif";intImage[id]=1;return;}}
+function initArray() {this.length = initArray.arguments.length;for (var i = 0; i < this.length; i++) {this[i] = initArray.arguments[i];}}var speed = 1000;var x = 0;var color = new initArray("#ffffff", "#e05e00");
+//-->
+</script>
+</head>
+<body onLoad=""><a name="top"></a>
+<div id="container">
+	<div id="menu_top">
+		<div id="menu_top_content">&nbsp;&nbsp;&nbsp;<a href="http://www.esuba.eu" target="_self"><img src="skins/basic/images/sys_project_esuba.gif" width="20" height="20" alt="www.esuba.eu" title="www.esuba.eu" align="middle">&nbsp;eSuba.eu</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.esubashop.eu" target="_blank"><img src="skins/basic/images/sys_project_esuba.gif" width="20" height="20" alt="www.eSubaShop.eu" title="www.eSubaShop.eu" align="middle">&nbsp;eSubaShop.eu</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.esubagames.eu" target="_blank"><img src="skins/basic/images/sys_project_esuba.gif" width="20" height="20" alt="www.eSubaGames.eu" title="www.eSubaGames.eu" align="middle">&nbsp;eSubaGames.eu</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.esubawear.eu" target="_blank"><img src="skins/basic/images/sys_project_esuba.gif" width="20" height="20" alt="www.esubawear.eu" title="www.esubawear.eu" align="middle">&nbsp;eSubaWear.eu</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.herna.biz" target="_blank"><img src="skins/basic/images/sys_project_esuba.gif" width="20" height="20" alt="www.herna.biz" title="www.herna.biz" align="middle">&nbsp;Herna.biz</a></div>
+	</div>
+	<div id="menu_custom">
+		<div id="menu_custom_left"><a href="javascript:MM_swapImgRestore();MM_swapImage('search','','./skins/basic/images/sys_icon_minus.gif',1);collapse2.slideup();collapse1.slideit();"><img src="./skins/basic/images/sys_icon_plus.gif" width="12" height="12" name="search" align="middle" alt="">&nbsp;&nbsp;Hledat</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:MM_swapImgRestore();MM_swapImage('customize','','./skins/basic/images/sys_icon_minus.gif',1);collapse1.slideup();collapse2.slideit()"><img src="./skins/basic/images/sys_icon_plus.gif" width="12" height="12" name="customize" align="middle" alt="">&nbsp;&nbsp;Prizpusobit</a></div>
+		<div id="menu_custom_right"><form action="index.php?lang=cz&amp;filter=" method="post"><ul id="layout_login">			<li>PITTBULL					<a href="index.php?project=esuba&amp;action=forum&amp;faction=pm"><img src="images/sys_message.gif" alt="Privátní zprávy" width="15" height="10" border="0" align="middle"></a>&nbsp;<span class="menu_custom_divider">|</span>&nbsp;ID: 1				&nbsp;<span class="menu_custom_divider">|</span>&nbsp;<a href="index.php?action=user_edit&amp;lang=cz&amp;filter=&amp;mode=edit_user">Upravit profil</a>
+				&nbsp;<span class="menu_custom_divider">|</span>&nbsp;<a href="index.php?action=forum&amp;project=esuba&amp;faction=friends&amp;lang=cz&amp;filter=">Prátelé</a>
+				&nbsp;<span class="menu_custom_divider">|</span>&nbsp;<a href="index.php?action=forum&amp;lang=cz&amp;filter=&amp;project=esuba&amp;faction=posts&amp;id0=42&amp;id1=43&amp;id2=44&amp;page=1" >Secret GB</a>				&nbsp;<span class="menu_custom_divider">|</span>&nbsp;Online: <a title="Online">417</a>/<a href="index.php?action=whoisonline&amp;lang=cz&amp;filter=" target="_self" title="Users">8</a>
+				&nbsp;<span class="menu_custom_divider">|</span>&nbsp;<a href="index.php?action=logout&amp;project=esuba&amp;lang=cz&amp;filter=">Odhlásit</a>&nbsp;&nbsp;			<a href="index.php?lang=cz" target="_self"><img src="images/cz.gif" width="18" height="12" alt="" align="middle"></a>&nbsp;&nbsp;
+			<a href="index.php?lang=en" target="_self"><img src="images/en.gif" width="18" height="12" alt="" align="middle"></a></li>
+			</ul>
+			</form>
+		</div>
+	</div>
+	<div id="cat1" style="width:964px;height:50px;">
+		<div style="padding: 0px 0px 0px 5px;">
+			<div align="center" style="padding-left:10px; padding-top:0px;">&nbsp;<form action="index.php?action=search&amp;lang=cz&amp;filter=" method="post">
+	<input type="text" class="search" name="retezec" size="20" maxlength="50" value="">	<select class="search" name="podminka"><option class="search" value="1" >Všechna slova</option>
+		<option value="2" >Alespon jedno slovo</option>
+		<option value="3" >Presný výraz</option>
+	</select>	Vyhledat v:	<input type="radio" name="search_choice" value="news" checked> Novinky & Clánky	<input type="radio" name="search_choice" value="actuality" > Aktuality	<input type="submit" class="search_submit" value="Hledat">
+	</form></div>
+		</div>
+	</div>
+	<div id="cat2" style="width:964px;height:510px;">
+		<div style="padding:0px 0px 0px 5px;">
+			<form action="eden_save.php?lang=cz&amp;filter=" method="post">
+			<table style="width:940px;height:500px;" cellspacing="2" cellpadding="5" border="0">
+				<tr>
+					<td colspan="6"><strong>Vyberte si, které panely se vám mají zobrazovat:</strong></td>
+				</tr>
+				<tr>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_1]" value="1"><input type="checkbox" name="admin_custom[custom_1]" value="1" checked="checked"> Poslední zápasy</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_2]" value="2"><input type="checkbox" name="admin_custom[custom_2]" value="1" > Flash hry</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_3]" value="3"><input type="checkbox" name="admin_custom[custom_3]" value="1" > Reprezentace CR zápasy</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_4]" value="4"><input type="checkbox" name="admin_custom[custom_4]" value="1" > Reprezentace CR clánky</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_5]" value="5"><input type="checkbox" name="admin_custom[custom_5]" value="1" > Anketa</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_6]" value="6"><input type="checkbox" name="admin_custom[custom_6]" value="1" checked="checked"> Návody</td>
+				</tr>
+				<tr>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_7]" value="7"><input type="checkbox" name="admin_custom[custom_7]" value="1" checked="checked"> Blogy</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_8]" value="8"><input type="checkbox" name="admin_custom[custom_8]" value="1" > Servery</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_9]" value="9"><input type="checkbox" name="admin_custom[custom_9]" value="1" checked="checked"> Noví uživatelé</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_12]" value="12"><input type="checkbox" name="admin_custom[custom_12]" value="1" checked="checked"> Best news</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_10]" value="10"><input type="checkbox" name="admin_custom[custom_10]" value="1" > Fortuna&nbsp;</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_11]" value="11"><input type="checkbox" name="admin_custom[custom_11]" value="1" > Novinky sponzoru&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="6"><strong>Vyberte skin:</strong></td>
+				</tr>
+				<tr>
+					<td colspan="6" style="background-color:#f6f6f6">
+					<select name="admin_custom_skin">
+					<option value="basic"selected>Basic</option>
+					<option value="esuba_old" >Old eSuba</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="6"><strong>Vyberte si, které kategorie si prejete zobrazovat:</strong></td>
+				</tr><tr><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="esuba"> eSuba</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="pg"> Progaming</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="movies"> Movies</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="blogs"> Blogs</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="poker"> Poker</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="cod"> Call of Duty</td></tr><tr><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="cod2"> Call of Duty 2</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="cod4"> Call of Duty 4</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="cod5"> Call of Duty 5</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="cs"> Counter Strike 1.6</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="css"> Counter Strike: Source</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="dota"> DotA</td></tr><tr><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="et"> Enemy Territory</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="fifa"> FIFA</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="nhl"> NHL</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="pes"> Pro Evolution Soccer</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="q3"> Quake 3</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="q4"> Quake 4</td></tr><tr><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="scbw"> Star Craft: Brood War</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="tmnf"> Trackmania Nations Forever</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="ut"> Unreal Tournament 2004</td><td style="background-color:#f6f6f6"><input type="checkbox" name="admin_custom_filter[]" value="wow"> World of Warcraft</td><td style="background-color:#f6f6f6">&nbsp;</td><td style="background-color:#f6f6f6">&nbsp;</td></tr>				<tr>
+					<td colspan="6"><strong>Fortuna:</strong></td>
+				</tr>
+				<tr>
+					<td style="background-color:#f6f6f6">Progaming</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_13]" value="13"><input type="checkbox" name="admin_custom[custom_13]" value="1" checked="checked"> Fotbal - 1.Cesko</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_14]" value="14"><input type="checkbox" name="admin_custom[custom_14]" value="1" checked="checked"> Fotbal - 1.Anglie</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_15]" value="15"><input type="checkbox" name="admin_custom[custom_15]" value="1" checked="checked"> Hokej - 1.Cesko</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_16]" value="16"><input type="checkbox" name="admin_custom[custom_16]" value="1" checked="checked"> Hokej - NHL</td>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_17]" value="17"><input type="checkbox" name="admin_custom[custom_17]" value="1" checked="checked"> Basketball - NBA</td>
+				</tr>
+				<tr>
+					<td style="background-color:#f6f6f6"><input type="hidden" name="admin_custom[id_18]" value="18"><input type="checkbox" name="admin_custom[custom_18]" value="1" checked="checked"> Florbal - Fortuna-Extraliga</td>
+					<td style="background-color:#f6f6f6">&nbsp;</td>
+					<td style="background-color:#f6f6f6">&nbsp;</td>
+					<td style="background-color:#f6f6f6">&nbsp;</td>
+					<td style="background-color:#f6f6f6">&nbsp;</td>
+					<td style="background-color:#f6f6f6">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="6"><input value="Odeslat" type="submit">
+						<input type="hidden" name="mode" value="admin_custom_save">
+						<input type="hidden" name="project" value="esuba">
+
+					</td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+	<!--
+	var collapse1=new animatedcollapse("cat1", 300, false)
+	var collapse2=new animatedcollapse("cat2", 300, false)
+	//-->
+	</script>
+	<div id="menu_logo">
+		<div id="menu_logo_1"><img id="logo2" src="./skins/basic/images/sys_bg_menu_logo2.gif" alt="" width="10" height="98" border="0"></div>
+		<div id="menu_logo_link" onclick="document.location.href='http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter='">&nbsp;</div>
+		<div id="menu_logo_2">		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1181162363810221.swf?clickTAG=http://www.dicota.cz" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1181162363810221.swf?clickTAG=http://www.dicota.cz" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]--></div>
+		<div id="menu_logo_3"><a href="http://www.hal3000.cz" target="_blank"><img src="images/sys_hal3000.gif" width="141" height="60" alt="HAL3000" title="HAL3000"></a></div>
+	</div>
+	<!-- This is the start of the menu -->
+	<div id="menu_main">
+		<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="Hlavní stránka"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="HLAVNÍ STRÁNKA" title="HLAVNÍ STRÁNKA" align="middle">&nbsp;HLAVNÍ STRÁNKA&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=browse_news&amp;lang=cz&amp;filter=" target="_self" title="Prehled novinek"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="PREHLED NOVINEK" title="PREHLED NOVINEK" align="middle">&nbsp;PREHLED NOVINEK&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=team&amp;lang=cz&amp;filter=" target="_self" title="Tým"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="TÝM&" title="TÝM&" align="middle">&nbsp;TÝM&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=comunity&amp;lang=cz&amp;filter=" target="_self" title="Komunita"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="KOMUNITA" title="KOMUNITA" align="middle">&nbsp;KOMUNITA&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=" target="_self" title="Download"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="DOWNLOAD" title="DOWNLOAD" align="middle">&nbsp;DOWNLOAD&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=forum&amp;lang=cz&amp;filter=" target="_self" title="Fórum"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="FÓRUM" title="FÓRUM" align="middle">&nbsp;FÓRUM&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=sponsors&amp;lang=cz&amp;filter=" target="_self" title="Sponzori"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="SPONZORI" title="SPONZORI" align="middle">&nbsp;SPONZORI&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+		<a href="http://www.esuba.eu/index.php?action=cups&amp;lang=cz&amp;filter=" target="_self" title="Cup"><img src="./skins/basic/images/sys_menu_tabmenu_left.gif" width="12" height="27" alt="CUP" title="CUP" align="middle">&nbsp;CUP&nbsp;<img src="./skins/basic/images/sys_menu_tabmenu_right.gif" width="12" height="27" align="middle" alt=""></a>
+	</div>
+	<div id="menu_sub">
+		<div id="submenu_1" class="menu_submenu">
+			<a href="http://www.esuba.eu/index.php?action=home_news&amp;lang=cz&amp;filter=" target="_self" title="Novinky">Novinky</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="http://www.esuba.eu/index.php?action=home_tutorials&amp;lang=cz&amp;filter=" target="_self" title="Návody">Návody</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=home_blogs&amp;lang=cz&amp;filter=" target="_self" title="Blogy redaktoru">Blogy redaktoru</a>
+		</div>
+		<div id="submenu_2" class="menu_submenu">
+			<a href="http://www.esuba.eu/index.php?action=browse_news_all&amp;lang=cz&amp;filter=" target="_self" title="Novinky">Novinky</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=browse_tutorials&amp;lang=cz&amp;filter=" target="_self" title="Návody">Návody</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=browse_blogs&amp;lang=cz&amp;filter=" target="_self" title="Blogy redaktoru">Blogy redaktoru</a><!-- &nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="_MENU_SUB__HELP">_MENU_SUB_</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="_MENU_SUB__HELP">_MENU_SUB_</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="_MENU_SUB__HELP">_MENU_SUB_</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="_MENU_SUB__HELP">_MENU_SUB_</a> -->
+		</div>
+		<div id="submenu_3" class="menu_submenu">
+			<a href="http://www.esuba.eu/index.php?action=about&amp;lang=cz&amp;filter=" target="_self" title="O nás">O nás</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=team&amp;lang=cz&amp;filter=" target="_self" title="Clenové">Clenové</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=clanwars&amp;lang=cz&amp;filter=" target="_self" title="Zápasy">Zápasy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=awards&amp;lang=cz&amp;filter=" target="_self" title="Ocenení">Ocenení</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=press&amp;lang=cz&amp;filter=" target="_self" title="Press">Press</a>
+		</div>
+		<div id="submenu_4" class="menu_submenu">
+			<a href="http://www.esuba.eu/index.php?action=links&amp;lang=cz&amp;filter=" target="_self" title="Odkazy">Odkazy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=users_list&amp;lang=cz&amp;filter=" target="_self" title="Uživatelé">Uživatelé</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="http://www.esuba.eu/index.php?action=oldpolls&amp;lang=cz&amp;filter=" target="_self" title="Ankety">Ankety</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=users_polls&amp;lang=cz&amp;filter=" target="_self" title="Ankety uživatelu">Ankety uživatelu</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/template.php?action=servers&amp;lang=cz&amp;filter=" target="_self" title="Herní servery">Herní servery</a>
+
+		</div>
+		<div id="submenu_5" class="menu_submenu">
+			<a href="http://www.esuba.eu/template.php?action=clanek&amp;lang=cz&amp;filter=&amp;id=1729" target="_self" title="eSuba - Loga a bannery">eSuba</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=134&amp;dld=close&amp;dld2=open#134" target="_self" title="Call of Duty">CoD</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=140&amp;dld=close&amp;dld2=open#140" target="_self" title="Call of Duty 2">CoD 2</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=152&amp;dld=close&amp;dld2=open#152" target="_self" title="Call of Duty 4: Modern Warfire">CoD 4</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=209&amp;dld=close&amp;dld2=open#209" target="_self" title="Counter Strike 1.6">CS 1.6</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=215&amp;dld=close&amp;dld2=open#215" target="_self" title="Counter Strike: Source">CS: S</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=155&amp;dld=close&amp;dld2=open#155" target="_self" title="FIFA">FIFA</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=" target="_self" title="NHL">NHL</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=" target="_self" title="Trackmania Nation Forever">TMNF</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=" target="_self" title="DotA">DotA</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=" target="_self" title="Videa">Videa</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=158&amp;dld=close&amp;dld2=open#158" target="_self" title="Programy a pomucky">Programy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=files&amp;lang=cz&amp;filter=&amp;dl_id=127&amp;dl_id2=170&amp;dld=close&amp;dld2=open#170" target="_self" title="Tapety na plochu">Tapety</a>
+		</div>
+		<div id="submenu_6" class="menu_submenu">
+			<!-- <a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="eSuba Fórum">eSuba Fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://www.esuba.eu/index.php?action=&amp;lang=cz&amp;filter=" target="_self" title="Dotazy hrácum">Dotazy hrácum</a> -->
+		</div>
+		<div id="submenu_7" class="menu_submenu">
+		</div>
+		<div id="submenu_8" class="menu_submenu">&nbsp;</div>
+	</div>	<div style="height:5px;width:950px;"><img src="images/bod.gif" width="1" height="1" alt="" onload="javascript:initMenu()"></div>	<div id="content" class="clearfix">
+		<!-- ///////////////////////// LEFT ///////////////////////// -->
+		<div class="content_side_col">			<!-- *** ZAPASY *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Poslední zápasy</div>
+			</div>
+			<div class="content_side_col_cont">
+				<div class="content_side_col_text"><table border="0" cellpadding="2" cellspacing="0">
+						<tr>
+							<td colspan="3" width="170" align="center">
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CoD" target="_self"><img src="images/hry/CoD.gif" alt="Call of Duty" title="Call of Duty" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<!--<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CoD2" target="_self"><img src="images/hry/CoD2.gif" alt="Call of Duty 2" width="12" height="12" border="0"></a>&nbsp;|&nbsp;-->
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CoD4" target="_self"><img src="images/hry/CoD4.gif" title="Call of Duty 4: Modern Warfare" alt="Call of Duty 4: Modern Warfare" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CoD5" target="_self"><img src="images/hry/CoD5.gif" title="Call of Duty 5: World at War" alt="Call of Duty 5: World at War" width="12" height="12" border="0"></a><!-- &nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=Q3" target="_self"><img src="images/hry/Q3.gif" title="Quake 3: Arena" alt="Quake 3: Arena" width="12" height="12" border="0"></a> -->&nbsp;|&nbsp;
+							<!-- <a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=Q4" target="_self"><img src="images/hry/Q4.gif" alt="Q4" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=UT04" target="_self"><img src="images/hry/UT04.gif" alt="UT" width="12" height="12" border="0"></a>&nbsp;|&nbsp;-->
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=FIFA" target="_self"><img src="images/hry/FIFA.gif" title="FIFA" alt="FIFA" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=NHL" target="_self"><img src="images/hry/NHL.gif" title="NHL" alt="NHL" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=DotA" target="_self"><img src="images/hry/DotA.gif" alt="DotA" width="12" height="12" border="0"></a><br>
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CSS" target="_self"><img src="images/hry/CSS.gif" title="Counter Strike: Source" alt="Counter Strike: Source" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CS" target="_self"><img src="images/hry/CS.gif" title="Counter Strike 1.6" alt="Counter Strike 1.6" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=CS-Ladies" target="_self"><img src="images/hry/CS-Ladies.gif" title="Counter Strike 1.6 Ladies" alt="Counter Strike 1.6 Ladies" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=TMNF" target="_self"><img src="images/hry/TMN.gif" title="Track Mania Nations Forever" alt="Track Mania Nations Forever" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=PES" target="_self"><img src="images/hry/PES.gif" title="Pro Evolution Soccer" alt="Pro Evolution Soccer" width="12" height="12" border="0"></a>&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=Poker" target="_self"><img src="images/hry/Poker.gif" title="Poker" alt="Poker" width="12" height="12" border="0"></a><!--&nbsp;|&nbsp;
+							<a href="index.php?action=news&amp;lang=cz&amp;filter=&amp;cw_game=ET" target="_self"><img src="images/hry/ET.gif" alt="ET" width="12" height="12" border="0"></a> -->
+							</td>
+						</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/PES.gif" alt="PES" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2777&amp;filter=">kb</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">06</span>:<span class="green">00</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/PES.gif" alt="PES" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2775&amp;filter=">mXs</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="red">01</span>:<span class="red">02</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/DotA.gif" alt="DotA" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2776&amp;filter=">Pink</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">01</span>:<span class="green">00</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/CoD4.gif" alt="CoD4" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/GB.gif" width="18" height="12" alt="Velká Británie">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2774&amp;filter=">dignitas</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="red">09</span>:<span class="red">13</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/CoD4.gif" alt="CoD4" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/PL.gif" width="18" height="12" alt="Polsko">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2773&amp;filter=">tm.eizo</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">13</span>:<span class="green">10</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/CS.gif" alt="CS" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2772&amp;filter=">fofos.sk</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">16</span>:<span class="green">05</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/PES.gif" alt="PES" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2771&amp;filter=">zajo</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">01</span>:<span class="green">00</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/TMNF.gif" alt="TMNF" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/NL.gif" width="18" height="12" alt="Holandsko">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2769&amp;filter=">Begrip JWH</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">14</span>:<span class="green">06</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/PES.gif" alt="PES" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2770&amp;filter=">zajo</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">02</span>:<span class="green">00</span></strong></td>
+							</tr>							<tr>
+								<td valign="top" width="12"><img src="images/hry/CS.gif" alt="CS" width="12" height="12" border="0"></td>
+								<td valign="top" width="110" STYLE="font-size:9px;"><img src="edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<strong><span class="cw_link"><a href="index.php?lang=cz&amp;action=clanwars&amp;stav=open&amp;id_cw=2766&amp;filter=">MiB</a></span></strong></td>
+								<td valign="top" width="35" STYLE="font-size:10px;"><strong><span class="green">16</span>:<span class="green">05</span></strong></td>
+							</tr>					<tr>
+						<td colspan="3" class="text" style="text-align:center;"><a href="index.php?action=clanwars&amp;lang=cz&amp;filter=" target="_self">Všechny zápasy</a></td>
+					</tr>
+				</table></div>
+			</div>
+			<!-- *** ZAPASY - KONEC *** -->			<!-- *** BLOGY *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Blogy</div>
+			</div>
+			<div class="content_side_col_cont">
+				<ul class='menu'><li>
+<div class='left'>
+	<img src="edencms/category/PrivateColumns.gif" title="Blogy" alt="Blogy" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Svetoví mocipáni... The Bilderberg Group'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2780&amp;page_mode=">Svetoví mocipáni... ...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='156'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2780&amp;modul=news&amp;page_mode=" target="_self">156</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/PrivateColumns.gif" title="Blogy" alt="Blogy" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Barack Obama se stehuje do Bílého Domu'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2778&amp;page_mode=">Barack Obama se steh...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='88'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2778&amp;modul=news&amp;page_mode=" target="_self">88</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/PrivateColumns.gif" title="Blogy" alt="Blogy" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Good old games'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2710&amp;page_mode=">Good old games</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='23'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2710&amp;modul=news&amp;page_mode=" target="_self">23</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/PrivateColumns.gif" title="Blogy" alt="Blogy" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Máme rádi techniku'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2677&amp;page_mode=">Máme rádi techniku</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='11'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2677&amp;modul=news&amp;page_mode=" target="_self">11</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/PrivateColumns.gif" title="Blogy" alt="Blogy" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Online titán Google'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2643&amp;page_mode=">Online titán Google</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='27'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2643&amp;modul=news&amp;page_mode=" target="_self">27</a></acronym>
+</div>
+</li>				</ul>
+				<div align="center" style="text-align:center;"><a href="index.php?action=blogs&amp;lang=cz&amp;filter=" target="_self">Všechny blogy</a></div>
+			</div>
+			<!-- *** BLOGY - KONEC *** -->
+			<!-- *** SECRET NEWS *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Secret News</div>
+			</div>
+			<div class="content_side_col_cont">
+				<ul class='menu'><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Placený trénink s profesionálními hráci'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2697&amp;page_mode=">Placený trénink s pr...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='21'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2697&amp;modul=news&amp;page_mode=" target="_self">21</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Sleva 20% do www.represhop.eu'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2368&amp;page_mode=">Sleva 20% do www.rep...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='0'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2368&amp;modul=news&amp;page_mode=" target="_self">0</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='MeziHernové turnaje zadarmo'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2207&amp;page_mode=">MeziHernové turnaje ...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='1'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2207&amp;modul=news&amp;page_mode=" target="_self">1</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Doklady pro naší úcetní'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2134&amp;page_mode=">Doklady pro naší úce...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='0'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2134&amp;modul=news&amp;page_mode=" target="_self">0</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Hesla!'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1931&amp;page_mode=">Hesla!</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='3'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1931&amp;modul=news&amp;page_mode=" target="_self">3</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Nastaveni emailu eSuba.eu'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1632&amp;page_mode=">Nastaveni emailu eSu...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='2'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1632&amp;modul=news&amp;page_mode=" target="_self">2</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Pridavani - Press'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1559&amp;page_mode=">Pridavani - Press</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='3'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1559&amp;modul=news&amp;page_mode=" target="_self">3</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Server opet nahozen - BNC a FTP'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1535&amp;page_mode=">Server opet nahozen ...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='17'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1535&amp;modul=news&amp;page_mode=" target="_self">17</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Fotky do sekce TEAM'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1499&amp;page_mode=">Fotky do sekce TEAM</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='12'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1499&amp;modul=news&amp;page_mode=" target="_self">12</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/AllTopics.gif" title="Secret news" alt="Secret news" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Reporty a coverage z akcí'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1498&amp;page_mode=">Reporty a coverage z...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='9'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1498&amp;modul=news&amp;page_mode=" target="_self">9</a></acronym>
+</div>
+</li></ul>
+				<div align="center" style="text-align:center;"><a href="index.php?action=secret_news&amp;lang=cz&amp;filter=" target="_self">Všechny novinky</a></div>
+			</div>
+			<!-- *** SECRET NEWS - KONEC *** -->			<!-- *** NAVODY *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Návody</div>
+			</div>
+			<div class="content_side_col_cont">
+				<ul class='menu'><li>
+<div class='left'>
+	<img src="edencms/category/DotA.gif" title="Tutorials - DotA" alt="Tutorials - DotA" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Demigod aneb DotA v sexy kabátku'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=2699&amp;page_mode=">Demigod aneb DotA v ...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='19'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=2699&amp;modul=news&amp;page_mode=" target="_self">19</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/ET.gif" title="Tutorials - ET" alt="Tutorials - ET" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Welcome to Wolfenstein: Enemy Territory!'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1636&amp;page_mode=">Welcome to Wolfenste...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='25'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1636&amp;modul=news&amp;page_mode=" target="_self">25</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/CSS.gif" title="Tutorials - CSS" alt="Tutorials - CSS" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='mIRC & #css.gather.cz'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1254&amp;page_mode=">mIRC & #css.gather.c...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='7'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1254&amp;modul=news&amp;page_mode=" target="_self">7</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/CSS.gif" title="Tutorials - CSS" alt="Tutorials - CSS" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='Jak je duležité míti Tactic Leadera?'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1206&amp;page_mode=">Jak je duležité míti...</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='31'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1206&amp;modul=news&amp;page_mode=" target="_self">31</a></acronym>
+</div>
+</li><li>
+<div class='left'>
+	<img src="edencms/category/CoD2.gif" title="Tutorials - CoD2" alt="Tutorials - CoD2" width="16" height="16" border="0">&nbsp;&nbsp;<acronym title='This is CoD 2'><a href="template.php?lang=cz&amp;filter=&amp;action=clanek&amp;id=1132&amp;page_mode=">This is CoD 2</a></acronym>
+</div>
+<div class='right'>
+	<img src="/images/bod.gif" alt="" width="1" height="16" border="0"><acronym title='53'><a href="template.php?lang=cz&amp;filter=&amp;action=komentar&amp;id=1132&amp;modul=news&amp;page_mode=" target="_self">53</a></acronym>
+</div>
+</li></ul>
+				<div align="center" style="text-align:center;"><a href="index.php?action=home_tutorials&amp;lang=cz&amp;filter=" target="_self">Všechny návody</a></div>
+			</div>
+			<!-- *** NAVODY - KONEC *** -->
+		</div>
+		<!-- ///////////////////////// LEFT - KONEC ///////////////////////// --><!-- ///////////////////////// TEMPLATES ///////////////////////// -->
+	<div class="content_template_col">
+		<div class="content_template_col_header">
+			<div class="content_template_col_title">Clánek - Komentáre</div>
+		</div>
+		<div class="content_template_col_cont">
+			<div class="content_template_col_text">	<table cellpadding="3" class="text">
+		<tr>
+			<td class="text">
+					<iframe id="Clanky" width="584" height="400" frameborder="1" noresize="noresize" scrolling="auto" src="eden_iframe.php?action=clanekiframe&amp;lang=cz&amp;filter=&amp;id=2822&amp;project=esuba"></iframe><br><br>				<table align="center" cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1181162389344219.swf?clickTAG=http://www.dicota.cz" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1181162389344219.swf?clickTAG=http://www.dicota.cz" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="1"></a>1.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5103">Sosonek</a> (88.103.149.84)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 22:32</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>Gl :)</strong><br>								GL at ti to strílí :)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="2"></a>2.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4063">Pospi</a> (83.240.27.42)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 22:37</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								gl!<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="3"></a>3.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/KY.gif" width="18" height="12" alt="Kajmanské ostrovy">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4075">TouCan</a> (62.177.88.61)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 22:55</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:p</strong><br>								Gl mamco<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="4"></a>4.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6421">crashzzz</a> (83.69.40.1)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 22:58</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>.</strong><br>								dalsi cubka<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="5"></a>5.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6518">Thomm!no</a> (85.193.33.6)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 23:01</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>jejdaaa :D</strong><br>								slintani ON?! :D ajta krajta takove hraci bych chtel mit v tymu taky :D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="6"></a>6.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6518">Thomm!no</a> (85.193.33.6)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 23:02</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								*hrácky<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="7"></a>7.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS.gif" width="12" height="12" alt="Counter Strike 1.6">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5466">jRRRi</a> (78.110.208.226)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 23:02</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:)</strong><br>								gl =)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="8"></a>8.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/eSuba.gif" width="12" height="12" alt="Management">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=1371">scop</a> (92.243.200.12)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 23:06</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:-)</strong><br>								Hodne stesti :-)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="9"></a>9.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/eSuba.gif" width="12" height="12" alt="Správa webu">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=1930">dRaGen</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">18.11.2008, 23:07</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>ježiš pes šárka :D</strong><br>								... delam si srandu :p gl pejsku :p<br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="10"></a>10.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2839">Big_pig</a> (195.22.37.19)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 00:00</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>Hehe</strong><br>								Cekal jsem, ze tan nadpis tam zustane dele, a ze bude diskuze kvuli tomu..... docela fofr teda (ktere z &quot;bitchek&quot; psala autorovi? ;-) )<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="11"></a>11.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=443">Matej `spax` Chmelo</a> (90.177.167.99)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 00:10</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								ah, uz se tesim na ty nadrzenecky komenty...
+<br>
+<br>hodne stesti :)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="12"></a>12.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5073">Illmatic</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 00:32</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								GL další z KnO v eSube ^^<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="13"></a>13.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS.gif" width="12" height="12" alt="Counter Strike 1.6">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5476">jckl</a> (89.102.37.250)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 01:30</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								gl &quot;Sáro&quot; :D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="14"></a>14.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4634">Adder</a> (88.103.146.62)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 05:40</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:-P</strong><br>								vydrt to tyyy :-P šari :)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="15"></a>15.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5027">sunshide</a> (85.70.24.202)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 06:01</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>gl</strong><br>								ooo a pekne ta peknce tancííí :D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="16"></a>16.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3570">zonyzek</a> (80.188.117.122)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 07:12</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>eusbytchky</strong><br>								to je tak nechuty slovo :|<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="17"></a>17.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/TMN.gif" width="12" height="12" alt="Trackania Nations Forever">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=7236">shark</a> (62.168.43.210|10.5.1.6)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 10:10</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Hodne štestí. :)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="18"></a>18.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/EFS.gif" width="12" height="12" alt="eSuba Film Studio">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6964">Kadli</a> (90.176.238.184|192.168.1.112)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 10:23</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Najs GL :)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="19"></a>19.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6316">jance.</a> (85.207.119.131)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 10:47</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>gogogo Sáááááára! :D</strong><br>								a esubytchky je krasne slovo!<br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1224713545870759.swf?clickTAG=http://www.wdc.com/en/products/products.asp?driveid=488" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1224713545870759.swf?clickTAG=http://www.wdc.com/en/products/products.asp?driveid=488" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="20"></a>20.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8649">Strawber</a> (195.113.151.142|192.168.205.229)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 12:16</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Šárka dává hlavy jako žádná lejdýz :-) GL krok dopredu pro Šárku i pro Esubu<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="21"></a>21.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/FIFA.gif" width="12" height="12" alt="FIFA">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6381">DiDa</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 13:37</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>GL sarko </strong><br>								hodne stesti !!.. Klášterec 4rever<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="22"></a>22.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4494">proxio</a> (82.209.51.166)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 14:41</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>hm</strong><br>								zda se mi to nebo to je focené v kuchyni ? :D jinak GL ženo :)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="23"></a>23.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8650">Sarik</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 15:22</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								zda, je to focený v autodílne :D:D
+<br>jinak thx všem :D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="24"></a>24.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/eSuba.gif" width="12" height="12" alt="Management">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6">Nodlle_____</a> (86.49.79.129)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 15:23</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>Vitej</strong><br>								Vitej u nas a at se ti dari ;-)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="25"></a>25.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/eSuba.gif" width="12" height="12" alt="Management">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6">Nodlle_____</a> (86.49.79.129)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 15:24</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>Prodam PC</strong><br>								btw, omluvte mensi reklamu -
+<br><a href="http://esuba.net/members/nodlle/PC/" target="_blank">Prodam herni PC</a>
+<br><br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="26"></a>26.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3352">Elendil</a> (213.226.240.184)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 16:26</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								tý by tam slušel :-)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="27"></a>27.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2299">leitoN</a> (217.117.217.226)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 16:32</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>.</strong><br>								Že si byla na ugt?:P pamatuješ si na kluky, co sedeli hned za tebou? (cod2):))<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="28"></a>28.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2516">Crespo</a> (91.127.26.48)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 16:40</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:P </strong><br>								pekna pipinka ... cecky ven !<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="29"></a>29.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6312">Mia</a> (87.244.225.32)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 16:55</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Sarka nech sa ti u nas dari a strielas same hlavy :D!<br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="30"></a>30.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4753">crueL</a> (85.207.212.160)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 17:01</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>...</strong><br>								slint,slint...strík,strík...
+<br>libimseti.cz/_kadas_
+<br>napiš Šárko dáme match :-*
+<br>^.^<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="31"></a>31.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=7712">jozin</a> (91.127.251.84)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 17:26</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>30</strong><br>								zdechnu píco:DDDDDDDDDD<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="32"></a>32.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4753">crueL</a> (85.207.212.160)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 17:33</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>31</strong><br>								:DDDDD<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="33"></a>33.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/PES.gif" width="12" height="12" alt="Pro Evolution Soccer">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8331">messiaH</a> (88.100.94.37)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 18:13</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								gl ;)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="34"></a>34.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5424">mouKiz</a> (82.208.10.21|217.77.165.56)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 19:00</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								další esubák z kno, gl ;)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="35"></a>35.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/eSuba.gif" width="12" height="12" alt="Správa webu">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=1930">dRaGen</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 19:03</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#34,#21</strong><br>								nj, kno vládne svetu ... ehm... teda eSube :p<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="36"></a>36.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8650">Sarik</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 20:21</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								27.
+<br>jo, byla :D ale fakt nepamatuju za mnou sedeli nejaky madari a taky hráli 1.6 :D<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="37"></a>37.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6864">RodneyYy</a> (88.146.186.18)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 20:29</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>30</strong><br>								OMG co to je za gaye :D rofl ?? A btw fotky tvyho bratra nechcu<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="38"></a>38.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2299">leitoN</a> (217.117.217.226)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 21:05</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#36</strong><br>								Já ti dam madari, presne o místo za tebou sedel muj spoluhrác a já hned vedle nej :D ješte jsme te v noci furt budily xd
+<br><a href="http://imb.lide.cz/large/47028D3CB281FFA8C6420000.jpg#21397833" target="_blank">foto</a><br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="39"></a>39.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4063">Pospi</a> (83.240.27.42)							</td>
+							<td align="right"  class="eden_comments">19.11.2008, 21:09</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								ehm.. zase machruješ leito?:D<br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br><a href="eden_jump.php?id=86&amp;project=esuba&amp;jump_mode=adds" target="_blank"><img src="http://www.esuba.eu/edencms/adds/1227042463369175.gif" border="0" alt="www.amd-unleash.com/?lang=cz"></a><br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="40"></a>40.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2299">leitoN</a> (217.117.217.226)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 06:57</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#39</strong><br>								A už tu máme adepta na blbce týdne!<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="41"></a>41.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5484">sunny</a> (147.230.74.128)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 07:50</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Aaa, další dívcice do sbírky :-D. Gl, at se darí.<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="42"></a>42.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/FI.gif" width="18" height="12" alt="Finsko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=1320">Ghu</a> (81.91.216.32)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 11:09</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								HEh, nestudujes nahodou v Ostrave? a nebyla si vcera v hospode u kolejí? A nesedli ste si s holkama k takovy stolu?...... to uz by melo dost napovedet :D Pokud je to omyl tak se omlouvam, piv bylo dost..<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="43"></a>43.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4063">Pospi</a> (83.240.27.42)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 15:39</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>40</strong><br>								Cti borce!<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="44"></a>44.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8650">Sarik</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 15:40</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								42. jo , to bude asi omyl :D:D bydlim na druhym konci CR
+<br>38 heeeeeeej, uz vim :D:D v noci ste me furt budili , aja takova socka spinava v tom spacaku :D a rano me zase vyhodili necroraisers sourcari bo kdo tam byl :D<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="45"></a>45.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5324">haLuZaceK</a> (84.47.95.70)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 15:51</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>SARKO?</strong><br>								len jedna oatzka tancujes hiphop alebo breakdance??  alebo vsetko mozne??....to si asi ty v tom cervenom tricku ze???...dobre ty (&gt;_<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="46"></a>46.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/Redakce.gif" width="12" height="12" alt="Editorial">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=2299">leitoN</a> (217.117.217.226)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 16:38</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#44</strong><br>								Náhodou ti to slušelo i v noci :D já nejdrív myslel, že jsi hosteska, ale pak když jsem videl, že si neseš PC a máš dres tak mi sklaplo :D<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="47"></a>47.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3280">xecuttor</a> (217.117.217.202)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 18:39</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#44</strong><br>								no jo já &quot;ráno&quot; zmrzlej otevru svoje oteklý oci a koukám že metr naproti me jsi Ty:D celkem fajn probuzení, až na ten trapas že jsem tam byl ve spacáku pod pujcenou dekou..:)) a budil Te leiton, já jsem tam jen šlapal po madarech..:D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="48"></a>48.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=7856">tOogY</a> (213.168.176.57)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 19:32</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#leitroN, sarik</strong><br>								Ješte nejaká story ze života? Nebo jste se už vykecali? :-O gl<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="49"></a>49.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 19:53</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>leito</strong><br>								(#38,#40)
+<br>pozor na své ego!
+<br><br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1227399576065561.swf?clickTAG=http://www.amd.com/de-de/assets/content_type/DigitalMedia/flashvideoplayer640.html?video=http://download.amd.com/emeaVideos/Czech/amd_stp_fr_v1_640x480.flv&preview=http://download.amd.com/emeaVideos/Czech/v1_cz_640.png" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="50"></a>50.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3280">xecuttor</a> (217.117.217.202)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:11</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#48 #49</strong><br>								Bežte se vtírat na gamepark:)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="51"></a>51.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:21</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								&quot;pozor na své ego&quot; je výraz vtírání? aha<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="52"></a>52.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=7856">tOogY</a> (213.168.176.57)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:24</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#50</strong><br>								taky si trochu rikam, pán bude asi moc chytrý..<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="53"></a>53.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:27</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								Si ríkám, ale pán je nejspíš leituv kamarád<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="54"></a>54.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3280">xecuttor</a> (217.117.217.202)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:36</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>..</strong><br>								Já myslím že tolik se vtírat fakt už nemusíte, zacíná to bejt celkem i trapný:)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="55"></a>55.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4792">hpnk</a> (85.132.158.238)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:42</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								cg_resenikdojevetsigay 1
+<br>gdž guys<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="56"></a>56.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4792">hpnk</a> (85.132.158.238)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:43</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								btw: z4ky se ctyrkou jednoznacne vyhrál. wp<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="57"></a>57.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=4792">hpnk</a> (85.132.158.238)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 20:45</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#56. add</strong><br>								togy s emo pIsmEnkAmA v nicku tesne za zadkem z4kymu se ctyrkou.<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="58"></a>58.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=7856">tOogY</a> (213.168.176.57)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 21:29</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#57</strong><br>								ty se taky neztratíš..<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="59"></a>59.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=6421">crashzzz</a> (83.69.40.1)							</td>
+							<td align="right"  class="eden_comments">20.11.2008, 23:15</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>.</strong><br>								#57 a do cela se dostava a vitezi hpnk s jeho nahnedlou pleti a debilnima kecama :)<br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1224713545870759.swf?clickTAG=http://www.wdc.com/en/products/products.asp?driveid=488" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1224713545870759.swf?clickTAG=http://www.wdc.com/en/products/products.asp?driveid=488" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="60"></a>60.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5324">haLuZaceK</a> (78.99.239.233)							</td>
+							<td align="right"  class="eden_comments">21.11.2008, 06:13</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>HPNK</strong><br>								mne sa zda ze to sa skor ty vtierac  do tlusteho zadku lietona..a este svoje debilne keci jezis maria kde ten svet speje...to si na tou vetou rozmyslal asi dost dlho pokial tvoj maly mozocek nieco spracoval co<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="61"></a>61.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">21.11.2008, 08:39</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								#60 máš recht
+<br>#57,59 vy jste nám to s toogym teda teda nandali :°<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="62"></a>62.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">21.11.2008, 08:39</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:O</strong><br>								jednou teda stací<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="63"></a>63.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=1852">Majkl_GO</a> (86.49.115.26)							</td>
+							<td align="right"  class="eden_comments">21.11.2008, 15:05</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#44</strong><br>								Mno, spala si mi pod pocitacem a my meli za 15 minut finale LB proti nEophyte, takze jsme te vzbudit museli :D. Ale vyhrali sme to :D.
+<br>
+<br>Hodne stesti u eSubaku a bacha na nudlakovo neslusny navrhy!<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="64"></a>64.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5324">haLuZaceK</a> (78.99.239.233)							</td>
+							<td align="right"  class="eden_comments">21.11.2008, 17:40</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#61</strong><br>								nemam naladu sa hadat ale ani pisat ale tvoj komentar #53 cista úravda ten HPNK se pcha kazdemu druhemu do rity RITOLEZEC NIC VIACEJ----
+<br>
+<br>+ co to znamena recht po slovensky nevies??? nemam sajnu co to znamena cesky :D<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="65"></a>65.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3639">z4kY</a> (85.135.101.62)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 12:07</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>#64</strong><br>								Je to prejaté z nemciny, znamená to, že máš pravdu :)<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="66"></a>66.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=3315">R4dioN</a> (89.103.142.147)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 12:15</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>:D</strong><br>								To Ácko nic moc holka :D .Jsem vás ješte na žádné souteži nevidel.:(<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="67"></a>67.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8650">Sarik</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 14:44</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								46,47
+<br>hehe :D jo no, to asi cumeli vsichni, co tam jako robim ne :D ostuda:D
+<br>63. hehe nazdar:)No to mate jediny stesti teda, ja sem se totiz vubec nevyspala :D:D<br><br><br>
+							</td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="68"></a>68.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<img src="http://www.esuba.eu/edencms/admins_category/CS-Ladies.gif" width="12" height="12" alt="Counter Strike 1.6 Ladies">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8650">Sarik</a> (93.91.144.55)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 14:45</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap><strong>45</strong><br>								Vsetko :)<br><br><br>
+							</td>
+						</tr>						<tr class="licha">
+							<td align="left"  class="eden_comments"><a name="69"></a>69.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5324">haLuZaceK</a> (78.99.239.233)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 18:13</td>
+						</tr>
+						<tr class="licha">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								#68 hehe vsetko a mzem vediet ako dlho sa tomu venujes podla toho triku to musi byt dlho co??...a este nieco to co mas na pravej ruke?? to je naco?? si mala nieco z tukou ci len pre IMIDŽ hehe....
+<br>#65 jo mam ucim sa nemecky ale som nemyslel ze to znamena ze mam pravdu :D:D
+<br><br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="text" align="center"><br>		<!--[if !IE]> -->
+		<object type="application/x-shockwave-flash" data="http://www.esuba.eu/edencms/adds/1181162389344219.swf?clickTAG=http://www.dicota.cz" width="468" height="60">
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  width="468" height="60">
+			<param name="movie" value="http://www.esuba.eu/edencms/adds/1181162389344219.swf?clickTAG=http://www.dicota.cz" />
+			<param name="allowScriptAccess" value="sameDomain">
+			<param name="menu" value="false">
+			<param name="quality" value="high">
+		<!--><!--dgx-->
+			<param name="loop" value="true">
+			<param name="menu" value="false">
+			<p>Pozor, máte vypnutý jazyk JavaScript nebo máte starou verzi prehrávace Adobe Flash Player. <a href="http://www.adobe.com/go/getflashplayer/">Získejte nejnovejší prehrávac Flash Player.</a></p>
+		</object>
+		<!-- <![endif]-->
+		<br><br></td>
+						</tr>						<tr class="suda">
+							<td align="left"  class="eden_comments"><a name="70"></a>70.&nbsp;<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<a href="http://www.esuba.eu/index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=5324">haLuZaceK</a> (78.99.239.233)							</td>
+							<td align="right"  class="eden_comments">22.11.2008, 18:13</td>
+						</tr>
+						<tr class="suda">
+							<td width="584" colspan="2"  class="eden_comments" wrap>								#68 hehe vsetko a mzem vediet ako dlho sa tomu venujes podla toho triku to musi byt dlho co??...a este nieco to co mas na pravej ruke?? to je naco?? si mala nieco z tukou ci len pre IMIDŽ hehe....
+<br>#65 jo mam ucim sa nemecky ale som nemyslel ze to znamena ze mam pravdu :D:D
+<br><br><br><br>
+							</td>
+						</tr>			</table><br><br>
+			<table width="584" align="center" cellpadding="4" cellspacing="0" border="0" class="sloupec">					<form action="eden_save.php" name="formular" method="post" onsubmit="return kontrola(this)">
+					<tr>
+						<td class="text" valign="top" colspan="2"><script type="text/javascript" charset="utf-8" src="http://cz.static.etargetnet.com/generic/advert.php?g=ref:7227,area:554x150,tabl:1,n:2,js:1,target:_new,border_color:ffffff,background_color:ffffff,title_color:210b80,text_color:000000,title_underline:0,h_title_underline:0,font:verdana" ></script><br><br></td>
+					</tr>					<tr>
+						<td class="text">Jméno:</td>
+						<td class="text"><strong>PITTBULL</strong><input type="hidden" name="jmeno" value="PITTBULL"></td>
+					</tr>
+					<tr>
+						<td class="text">Email:</td>
+						<td class="text"><strong>pittbull@esuba.eu</strong><input type="hidden" name="email" value="pittbull@esuba.eu"></td>
+					</tr>
+					<tr>
+						<td class="text">Predmet:<br><br></td>
+						<td class="text"><input type="text" name="topic" size="40" maxlength="40"><br><br></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="text">Komentár:<br>
+							<img alt="Vložit odkaz" class="editor_v" onmouseover="className='editor_o'" onmouseout="className='editor_v'" id="HyperLink" onclick="window.open('./edencms/eden_add_link.php?project=esuba&input=comments&amp;action=hyperlink&amp;lang=cz&amp;filter=','','menubar=no,resizable=no,toolbar=no,status=no,width=420,height=200')" height="20" src="http://www.esuba.eu/edencms/eden_images/editor_hyperlink.gif" width="20"><br>							<textarea cols="40" rows="7" id="comments" name="comments"></textarea><br><br>
+							<input type="submit" value="Odeslat">&nbsp;&nbsp;<input type="Reset" value="Reset">
+						</td>
+					</tr>						<input type="hidden" name="id" value="2822">
+						<input type="hidden" name="project" value="esuba">
+						<input type="hidden" name="reg_user_comm" value="">
+						<input type="hidden" name="modul" value="news">								<input type="hidden" name="odkaz" value="www.esuba.eu/template.php?action=komentar&amp;lang=cz&amp;filter=&amp;id=2822&amp;modul=news&amp;page_mode=">
+						<input type="hidden" name="mode" value="newscomm">
+						</form>				</table>			</td>
+		</tr>
+	</table>
+				<br>
+			</div>
+		</div>
+	</div>
+<!-- ///////////////////////// TEMPLATES - END ///////////////////////// -->
+		<!-- ///////////////////////// RIGHT ///////////////////////// -->
+		<div class="content_side_col">			<!-- *** KALENDAR *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Kalendár</div>
+			</div>
+			<div class="content_side_col_cont">
+				<div class="content_side_col_text" style="min-height: 300px;">	<table width="160" cellspacing="2" cellpadding="1" class="text" border="0" align="center">
+		<tr>
+			<td>				<a href="index.php?action=komentar&amp;lang=cz&amp;filter=&amp;month=10&amp;year=2008"><img src="images/sys_vlevo.gif" border="0"></a>
+				<a href="index.php?action=komentar&amp;lang=cz&amp;filter=&amp;month=12&amp;year=2008"><img src="images/sys_vpravo.gif" border="0"></a>
+				<span class="date_header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</td>
+			<!-- form tags must be outside of <td> tags -->
+			<form name="forma" action="index.php?action=komentar&amp;lang=cz&amp;filter=" method="post">
+			<td align="right">
+<select name="month">
+<option value="1">Leden</option>
+<option value="2">Únor</option>
+<option value="3">Brezen</option>
+<option value="4">Duben</option>
+<option value="5">Kveten</option>
+<option value="6">Cerven</option>
+<option value="7">Cervenec</option>
+<option value="8">Srpen</option>
+<option value="9">Zárí</option>
+<option value="10">Ríjen</option>
+<option value="11" selected>Listopad</option>
+<option value="12">Prosinec</option>
+</select>
+
+<select name="year">
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008" selected>2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+</select>
+
+				<input type="submit" value="Vyhledat">
+				<input type="hidden" name="project" value="esuba">
+			</td>
+			</form>
+		</tr>
+	</table>
+<div id="hint" style="position: absolute; z-index: 99;"></div>
+	<table width="160" id="eden_calendar_table" cellpadding="1" cellspacing="1" border="0" align="center">
+		<tr>	<td class="hlavicka_sloupcu">&nbsp;Po</td>
+	<td class="hlavicka_sloupcu">&nbsp;Út</td>
+	<td class="hlavicka_sloupcu">&nbsp;St</td>
+	<td class="hlavicka_sloupcu">&nbsp;Ct</td>
+	<td class="hlavicka_sloupcu">&nbsp;Pá</td>
+	<td class="hlavicka_sloupcu">&nbsp;So</td>
+	<td class="hlavicka_sloupcu">&nbsp;Ne</td>
+</tr>
+
+<tr>
+	<td class="empty_day_cell" valign="top">&nbsp;</td>
+	<td class="empty_day_cell" valign="top">&nbsp;</td>
+	<td class="empty_day_cell" valign="top">&nbsp;</td>
+	<td class="empty_day_cell" valign="top">&nbsp;</td>
+	<td class="empty_day_cell" valign="top">&nbsp;</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="1" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=1&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_1.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="2" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=2&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_2.gif" width="14" height="9" border="0"></span><br></td>
+</tr>
+
+<tr>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="3" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=3&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_3.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=871&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD2.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/dalsi.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('mam cod2 ligu od 8:00','','00:00','00:00','luckeR',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="4" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=4&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_4.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="5" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=5&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_5.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="6" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=6&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_6.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="7" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=7&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_7.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="8" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=8&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_8.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="9" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=9&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_9.gif" width="14" height="9" border="0"></span><br></td>
+</tr>
+
+<tr>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="10" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=10&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_10.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=872&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD2.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/dalsi.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('mam cod2 ligu od 8','','00:00','00:00','luckeR',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+																<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=873&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('CEVO','','21:00','00:00','Mazarini',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="11" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=11&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_11.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="12" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=12&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_12.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="13" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=13&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_13.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="14" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=14&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_14.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="15" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=15&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_15.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="16" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=16&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_16.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=875&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/cw.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('EMS ESL','','19:30','00:00','Mazarini',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+</tr>
+
+<tr>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="17" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=17&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_17.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=876&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD2.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/dalsi.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('od 8 mam cod2 ligu !','','00:00','00:00','luckeR',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="18" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=18&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_18.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=877&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/dalsi.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('dneska mame nejaky nacvicovani na<br>maturak od pul 8 .. absolutne<br>netusim kdy se vratim','','00:00','00:00','luckeR',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="19" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=19&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_19.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="20" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=20&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_20.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="21" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=21&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_21.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="22" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=22&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_22.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="today_cell" align="center"><span class="day_number">							<img alt="23" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=23&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_23.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=878&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/cw.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('BLX musi uklidit pokoj, nehraje se','','00:00','00:00','Mazarini',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+</tr>
+
+<tr>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="24" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=24&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_24.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=879&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('BLX nemuze, vymena oken ,nehraje<br>se','','00:00','00:00','Mazarini',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="25" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=25&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_25.gif" width="14" height="9" border="0"></span><br>								<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=760&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/calendar/fortuna.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('Poznan game arena (PGA) -<br>25.-26.11 - www.digitalarena.pl -<br>FIFA08','Poznan game arena (PGA)','00:00','00:00','leitoN',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+																<span class="title_txt"><a href="#" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_show.php?id=880&amp;project=esuba&amp;lid=1&amp;mode=web&amp;url=http://www.esuba.eu', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')"><img src="images/hry/CoD4.gif" alt=""  width="12" height="12" border="0"><br><img src="images/calendar/cw.gif" alt="" style="margin-bottom: 2px;" width="15" height="12" border="0" onmousemove="getMouse(event,'left')" onmouseover="ShowHint('BLX nemuze, vymena oken, nehraje<br>se','','00:00','00:00','Mazarini',250,1)" onmouseout="ShowHint('','','','','',0,0)"></a></span>
+								</td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="26" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=26&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_26.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="27" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=27&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_27.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="28" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=28&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_28.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="29" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=29&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_29.gif" width="14" height="9" border="0"></span><br></td>
+	<td valign="top" class="day_cell" align="center"><span class="day_number">							<img alt="30" style="cursor: pointer;" id="imageElink" onclick="window.open('http://eden.blackfoot.cz/modul_calendar_add.php?project=esuba&amp;lid=1&amp;d=30&amp;m=11&amp;y=2008&amp;action=add&amp;mode=web&amp;url=http://www.esuba.eu', 'postScreen', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=440,height=600')" img src="images/sys_30.gif" width="14" height="9" border="0"></span><br></td>
+</tr>
+
+	</table><br></div>
+			</div>
+			<!-- *** KALENDAR - KONEC *** -->			<!-- *** NEW USERS *** -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Noví uživatelé</div>
+			</div>
+			<div class="content_side_col_cont">
+				<div class="content_side_col_text" style="padding-top:5px;line-height:18px;">		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8681">picoZZ</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8680">ultrox</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8679">stavrrr</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8677">Pedrozont</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8676">vopi</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/SK.gif" width="18" height="12" alt="Slovensko">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8675">noir</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/CZ.gif" width="18" height="12" alt="Ceská republika">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8673">tercovec</a></span></strong><br>		<img src="http://www.esuba.eu/edencms/vlajky/NL.gif" width="18" height="12" alt="Holandsko">&nbsp;<strong><span class="cw_link"><a href="index.php?action=user_details&amp;lang=cz&amp;filter=&amp;user_id=8672">str1ke</a></span></strong><br>Celkem: <a href="index.php?action=users_list&amp;lang=cz&amp;filter=">7494</a></div>
+			</div>
+			<!-- *** NEW USERS - KONEC *** -->
+			<!-- # POCITADLO -->
+			<div class="content_side_col_header">
+				<div class="content_side_col_title">Pocítadlo prístupu</div>
+			</div>
+			<div class="content_side_col_cont">
+				<div class="content_side_col_text" style="text-align:center;">Od 05.07.2005	<br>
+					<a href="http://www.toplist.cz/" target="_blank">
+					<script type="text/javascript">
+					<!--
+					document.write ('<img src="http://toplist.cz/count.asp?id=145561&logo=mc&s=1&http='+escape(document.referrer)+'&wi='+escape(window.screen.width)+'&he='+escape(window.screen.height)+'&cd='+escape(window.screen.colorDepth)+'&t='+escape(document.title)+'" width="88" height="60" border=0 alt="TOPlist">');
+					//-->
+					</script>
+					</a><br><br>
+				</div>
+			</div>
+			<!-- *** POCITADLO - KONEC *** -->
+		</div>
+		<!-- ///////////////////////// RIGHT - KONEC ///////////////////////// --></div>
+<div id="footer">
+	<div id="footer_text">&copy; eSuba, 2004 - 2008&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="mailto:&#112;&#105;&#116;&#116;&#98;&#117;&#108;&#108;&#64;&#101;&#115;&#117;&#98;&#97;&#46;&#101;&#117;">webmaster</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="http://www.master.cz/server-hosting/" target="_blank">Server hosting</a> poskytuje <a name="Master Internet, s.r.o." href="http://www.master.cz" target="_blank">Master Internet, s.r.o.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+	<div id="footer_img">
+	<img src="./skins/basic/images/sys_logo_footer.gif" width="59" height="30" alt="eSuba" title="eSuba">
+	</div>
+	</div>
+<!-- hlavni -->
+<!-- Google analytics - Start -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1633138-1";
+urchinTracker();
+</script>
+<!-- Google analytics - End -->
+</body>
+</html>

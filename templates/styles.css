@@ -1,0 +1,50 @@
+.mtgLabel {
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	position:relative;
+	text-align:right;
+	padding-right:5px;
+}
+
+.mtgCardDetails {
+	padding: 5px;
+	margin: 0;
+	width: 695px;
+}
+
+.mtgCardDetails .mtgLeftCol {
+	vertical-align: top;
+	width: 230px;
+	padding: 2px;
+}
+
+.mtgCardDetails .mtgCardtextbox {
+	padding-bottom: 5px;
+}
+
+
+.mtgCardDetails .mtgRightCol {
+	vertical-align: top;
+	width: 450px;
+	padding: 5px;
+}
+
+.mtgCardDetails .mtgRow {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+
+.mtgCardDetails .mtgRow .mtgLabel {
+	font-weight: bold;
+	width: 120px;
+	font-size: .85em;
+	text-align:right;
+	position:relative;
+}
+
+.mtgCardDetails .mtgRow .mtgValue {
+	margin-left: 125px;
+	font-size: .85em;
+}

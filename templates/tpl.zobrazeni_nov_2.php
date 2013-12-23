@@ -1,0 +1,1 @@
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?lang=<?php echo AGet($_GET,'lang');?>&amp;filter=<?php echo AGet($_GET,'filter');?>&amp;action=clanek&amp;id=<?php echo $article_id;?>&amp;page_mode=<?php echo AGet($_GET,'page_mode');?>&amp;page_mode=<?php echo AGet($_GET,'page_mode');?>"><?php echo $article_headline;?></a><br><br>

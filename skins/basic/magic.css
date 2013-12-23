@@ -1,0 +1,202 @@
+body {height:100%;font-size:11px;font-family:Trebuchet MS, Verdana CE, Verdana, Geneva CE, Geneva, Arial CE, Arial, Helvetica CE, Helvetica, sans-serif;}
+body, html {padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;}
+td {font-size:11px;font-family:Trebuchet MS, Verdana CE, Verdana, Geneva CE, Geneva, Arial CE, Arial, Helvetica CE, Helvetica, sans-serif;}
+body, div, form, html {border:0;margin:0;padding:0;text-align:left;}
+img {border:0;margin:0;padding:0;}
+.img_articles {margin:0px 5px 0px 0px;border:1px solid #000000;}
+.first_line{margin:0px 0px 0px 0px;}
+h1.best_article{font-size:1.3em;}
+h1.best_article A {font-size:1.3em;color:#b82300;text-decoration:none;}
+h1.best_article A:visited {font-size:1.3em;color:#b82300;text-decoration:none;}
+h1.best_article A:hover {font-size:1.3em;color:#595244;text-decoration:underline;}
+div#container {
+	background-color:#c9bca6; 
+	min-height:800px; 
+	height:100%; 
+	margin:auto;
+	background:#312e27 url(images/container-repeat.jpg) repeat-y;
+	width:974px;
+}
+body {background:#000000 url(images/background.jpg) no-repeat center top;}
+div#menu_top {width:974px;height:50px;margin:0px 0px 0px 0px;background:#312E27 url(images/sys_bg_menu_top.jpg) repeat-x;}
+div#menu_top_content {width:964px;height:40px;margin:5px 0px 0px 0px;float:left;}
+div#menu_top_content A {font-size:1em;font-weight:bold;color:#333333;text-decoration:none;}
+div#menu_top_content A:visited {font-size:1em;font-weight:bold;color:#333333;text-decoration:none;}
+div#menu_top_content A:hover {font-size:1em;font-weight:bold;color:#595244;text-decoration:underline;}
+div#menu_custom {width:964px;margin:0px 5px 1px 5px;height:30px;background:#312E27 url(images/sys_bg_menu_custom.jpg) repeat-x;}
+div#menu_custom_left {height:20px;font-weight:bold;color:#ffffff;float:left;margin:5px 0px 0px 5px;}
+div#menu_custom_right {width:720px;height:20px;color:#ffffff;float:right;margin:0px 0px 0px 5px;}
+div#menu_custom A {font-size:1em;color:#ffffff;text-decoration:none}
+div#menu_custom A:visited {font-size:1em;color:#ffffff;text-decoration:none;}
+div#menu_custom A:hover {font-size:1em;color:#ffffff;text-decoration:underline;}
+span.menu_custom_divider {color:#193c53;}
+div#menu_logo {width:964px;margin:0px 5px 0px 5px;	height:98px;background:#c3c3c3 url(images/sys_bg_menu_logo.jpg) no-repeat;}
+div#menu_logo_1 {position:absolute;}
+div#menu_logo_2 {position:absolute;margin:20px 0px 0px 324px;width:468px;height:60px;}
+div#menu_logo_3 {position:absolute;margin:20px 0px 0px 807px;width:141px;height:60px;}
+div#menu_logo_link {position:absolute;margin:5px 0px 0px 50px;width:245px;height:90px;cursor:pointer;}
+#logo2 {position:relative;left:-10px;}
+
+/* Customize menu */
+#cat1{margin-left:4px;background-color:#dedede;}
+#cat2{margin-left:4px;background-color:#dedede;}
+#cat3{margin-left:4px;background-color:#dedede;}
+
+/* Menu */
+#menu_main {margin:0px 5px 0px 5px;background-image:url(images/sys_bg_menu_main.jpg);font-size:1em;height:29px;position:relative;width:964px;}
+#menu_main a {color:#fff; text-decoration:none;font-weight:bold;height:30px;position:absolute;bottom:-1px;}
+#menu_sub {background:#312E27 url(images/sys_bg_menu_sub.jpg) repeat-x;height:30px;margin:0px 5px 0px 5px;width:964px;}	
+#menu_sub div {white-space:nowrap;}
+#menu_main .activeMenuItem {background:#FFF url(images/sys_menu_tabmenu_middle.gif) repeat-x;height:27px;cursor:pointer;}
+#menu_main .inactiveMenuItem {margin:0px 12px 0px 12px;	height:27px;bottom:-5px;color:#ffffff;cursor:pointer;}
+#menu_sub a {text-decoration:none;padding-left:5px;padding-right:5px;color:#ffffff;font-size:1em;font-weight:bold;}
+#menu_sub a:hover {color:#ffffff;text-decoration:underline;}
+.menu_submenu {padding:7px 5px 0px 5px;}
+
+/* Customize menu */
+#cat1{margin-left:5px;width:964px;height:30px;background-color:#dedede;}
+#cat2{margin-left:5px;width:964px;height:50px;background-color:#dedede;}
+#cat3{margin-left:5px;width:964px;height:200px;background-color:#dedede;}
+
+/* Fortuna */
+#fortuna {width:964px;height:30px;margin:5px 5px 5px 5px;background:#ffe600 url(../../images/sys_fortuna.gif) no-repeat;}
+
+/* Sloupce */
+div#content {width:964px;margin:0px 0px 0px 5px;}
+.content_header, div.content_side_col_header, div.content_article_col_header, div.content_act_col_header, div.content_template_col_header, div.content_err_col_header, div#content_forum_col_header, div.content_article_home_header {height:25px;font-size:1.3em;color:#ffffff;font-weight:bold;}
+
+/* Levy sloupec */
+div.content_side_col {margin:0px 0px 0px 0px;width:175px;float:left;}
+div.content_side_col_header {overflow:hidden;margin-top:0px;width:175px;background:#193c53 url(images/sys_title_side.jpg) no-repeat;height:20px;font-size:1em;color:#ffffff;font-weight:bold;}
+div.content_side_col_title {padding:2px 0px 0px 30px;}
+div.content_side_col_cont {margin:0px 0px 5px 0px;width:175px;background:#ffffff;}
+div.content_side_col_text {padding-left:3px;margin-right:0px;width:175px;}
+div.content_side_col_text_results {padding-left:3px;margin:0px 0px 0px -6px;width:175px;}
+.nadpis_liga_vysledky {font-size:11px;font-weight:bold;margin:3px 3px 0px 3px;}
+div.content_side_col_text_flash {width:175px;}
+div.content_side_col_cont UL.menu {margin:0;padding:0;width:175px;}
+div.content_side_col_cont UL.menu LI {background:#ffffff url(images/sys_bg_list.gif) repeat-x;height:21px;list-style:none;padding:2px 3px 2px 3px;vertical-align:top;width:169px;}
+div.content_side_col_cont UL.menu LI DIV.left {clear:none;display:inline;float:left;text-align:left;vertical-align:middle;}
+div.content_side_col_cont UL.menu LI DIV.right {clear:none;color:#696969;display:inline;float:right;text-align:right;vertical-align:middle;}
+
+/* Sloupec top novinek */
+div.content_top_articles {margin:0px 0px 0px 0px;width:614px;float:left;}
+div.content_top_articles_col {margin:0px 0px 5px 5px;width:604px;float:left;background:#ffffff url(images/sys_bg_best_article.gif) no-repeat;height:250px;}
+div.content_top_articles_col_cont {margin:0px;width:604px;text-align:center;}
+div.content_top_articles_col_text {padding:10px 10px 10px 10px;width:584px;min-height:220px;text-align:justify;}
+div.content_top_articles_button {width:20px;height:18px;margin-left:3px;padding-top:2px;font-size:1em;font-weight:bold;color:#ffffff;background:#193c53;float:left;cursor:pointer;text-align:center;vertical-align:middle;}
+div.content_top_articles_article {margin: 0px 0px 0px 0px;width:584px;height:200px;position:absolute;visibility:hidden;}
+div#content_top_articles_button {height:30px;width:125px;position:relative;top:200px;left:470px;}
+
+/* Sloupec Videa */
+div.content_video_col {margin:0px 0px 5px 5px;width:604px;float:left;background:#ffffff url(images/sys_bg_best_article.gif) no-repeat;min-height:450px;}
+div.content_video_cont {margin:0px;width:604px;text-align:center;}
+
+/* Sloupec novinek */
+div.content_article_col {margin:0px 0px 0px 5px;width:348px;float:left;}
+div.content_article_col_header {overflow:hidden;margin-top:0px;width:348px;background:#193c53;}
+div.content_article_col_title {padding:4px 0px 0px 30px;}
+div.content_articles_col_cont {margin:0px 0px 5px 0px;width:348px;text-align:center;background-color:#ffffff;}
+div.content_articles_col_text {padding:10px 10px 0px 10px;width:328px;min-height:160px;text-align:left;}
+div.content_articles_col_info {width:338px;height:20px;}
+div.content_articles_col_source {padding:0px 0px 0px 10px;width:195px;height:20px;text-align:left;float:left;}
+div.content_articles_col_full_article {padding:0px 0px 0px 10px;width:120px;height:20px;text-align:right;float:right;}
+
+/* Sloupec home novinek */
+div.content_article_home_col {margin:0px 5px 0px 5px;width:604px;float:left;}
+div.content_article_home_header {margin:0px 0px 0px 0px;width:604px;height:25px;background:#193c53;}
+div.content_article_home_title {padding:4px 0px 0px 15px;}
+div.content_article_home_cont {margin:0px 0px 5px 0px;width:604px;text-align:center;background-color:#ffffff;}
+div.content_article_home_text {padding:10px 10px 10px 10px;width:584px;min-height:150px;text-align:left;}
+
+/* Sloupec aktualit */
+div.content_act_col {margin:0px 5px 0px 5px;width:251px;float:left;}
+div.content_act_col_header {overflow:hidden;margin-top:0px;width:251px;background:#193c53;}
+div.content_act_col_title {padding:4px 0px 0px 30px;}
+div.content_act_col_cont {margin:0px 0px 5px 0px;width:251px;background-color:#f6f6f6;}
+div.content_act_col_text {padding:10px 10px 10px 10px;width:231px;text-align:left;}
+.aktuality_popis A, .aktuality_name A {color:#b82300;text-decoration:none;}
+.aktuality_popis A:visited, .aktuality_name A:visited {color:#b82300;text-decoration:none;}
+.aktuality_popis A:hover, .aktuality_name A:hover {color:#595244;text-decoration:underline;}
+div.aktuality_popis {width:231px;display:inline;}
+div.aktuality_date {width:141px;text-align:left;float:left;}
+div.aktuality_name {width:90px;text-align:right;float:left;}
+
+/* Template */
+div.content_template_col {margin:0px 5px 0px 5px;width:604px;float:left;background-color:#ffffff;}
+div.content_template_col_header {margin:0px 0px 0px 0px;width:604px;height:25px;background:#193c53;}
+div.content_template_col_title {padding:4px 0px 0px 30px;}
+div.content_template_col_cont {margin:0px 0px 0px 0px;width:604px;}
+div.content_template_col_text {padding:10px 5px 10px 5px;width:584px;text-align:left;}
+
+/* Chybove hlasky a hlasky systemu */
+div#content_err_col {margin:0px 5px 5px 5px;width:964px;float:left;}
+div#content_err_col_header {overflow:hidden;margin-top:0px;width:964px;}
+div#content_err_col_cont {margin-left:0px;width:964px;background-color:#ff0000}
+div#content_err_col_text {margin:0px 5px 0px 5px;width:964px;text-align:center;color:#ffffff;}
+
+/* Nastaveni fora */
+div#content_forum_col {margin:0px 5px 0px 5px;width:984px;min-height:1000px;}
+div#content_forum_col_header {margin-top:0px;width:964px;background:#193c53 url(images/sys_title_forum.gif) no-repeat;}
+div#content_forum_col_title {padding:4px 0px 0px 30px;}
+div#content_forum_col_cont {margin-left:0px;width:964px;background:#FFFFFF;}
+div#content_forum_col_text {margin-left:5px;margin-right:5px;width:944px;text-align:justify;min-height:1000px;}
+
+/* Footer */
+div#footer {margin-left:5px;width:964px;height:30px;background:#193c53;}
+div#footer_text {position:absolute;margin-top:6px;width:900px;height:24px;text-align:right;color:#ffffff;}
+div#footer_img {position:absolute;margin-left:905px;width:59px;height:30px;}
+div#footer a:link {color:#ffffff;text-decoration:none;}
+div#footer a:visited {color:#ffffff;text-decoration:none;}
+div#footer a:hover {color:#595244;text-decoration:underline;}
+
+/* Clanek */
+td.kapitoly {width:550px;background-color:#A1A1A1;font-size:12px;font-weight:bold;color:#FFFFFF;border-style:solid;border-color:#000000;border-width:1px;padding:5px;margin:0px;}
+.kapitoly_seznam {width:550px;background-color:#D4D4D4;font-size:11px;color:#000000;border-style:solid;border-color:#000000;border-width:1px;padding:5px;margin:0px;}
+.kapitoly_seznam a:link, #footer a:link {color:#b82300;text-decoration:none;}
+.kapitoly_seznam a:visited, #footer a:visited {color:#b82300;text-decoration:none;}
+.kapitoly_seznam a:hover, #footer a:hover {color:#595244;text-decoration:underline;}
+
+/* Turnaje */
+.center {text-align:center;}
+.tournament { background: url(images/turnaje-bg.jpg) no-repeat; width:584px; height:77px; margin-bottom:15px;}
+.tournament_najada { background: url(images/najada-bg.jpg) no-repeat; width:584px; height:77px; margin-bottom:15px;color:#ffffff;}
+
+/* Inputy */
+input#login_name {background:url(images/sys_bg_input.gif) repeat-x;color:#000000;margin:0px 0px 0px 0px;border:1px solid #000000;height:14px;padding:0px 0px 0px 2px;}
+input#login_pass {background:url(images/sys_bg_input.gif) repeat-x;color:#000000;margin:0px 0px 0px 0px;border:1px solid #000000;height:14px;padding:0px 0px 0px 2px;}
+input#login_submit {background:url(images/sys_en_button_login.gif) no-repeat;width:33px;height:16px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;border:0px solid;cursor:pointer;}
+input#reg_submit {background:url(images/sys_en_button_reg.gif) no-repeat;width:45px;height:16px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;border:0px solid;cursor:pointer;}
+ul#layout_login{text-align:right;list-style:none;overflow:hidden;margin-top:5px;}
+#layout_login li{float:right; margin:0px 5px 0px 0px;}
+
+#blog_title{background-color:#595244;color:#ffffff;font-size:1em;font-weight:bold;}
+#sponsors_content{width: 584px;margin-left:0px;}
+#sponsors{width:584px;margin:0px 0px 10px 0px;float:left;position:relative;}
+#sponsors_img{	position:relative;width:210px; float:left;margin-left:0px;}
+#sponsors_text{position:relative;float:left;width:366px;margin-left:5px;text-align: justify;}
+
+/* *** Float containers fix:
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display: inline-table;}
+*/
+.clear { clear: both;}
+/* *** Float containers fix:
+
+ http://www.csscreator.com/attributes/containedfloat.php *** */ 
+.clearfix:after {content: ".";  display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix{display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .clearfix{height: 1%;}
+.clearfix{display: block;}
+
+/* End hide from IE-mac */  
+ /*printer styles*/ 
+@media print{ 
+	/*hide the left column when printing*/ 
+	#leftcol{display:none;} 
+	/*hide the right column when printing*/ 
+	#rightcol{display:none;} 
+	#twocols, #maincol{width:100%; float:none;}
+}

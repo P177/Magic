@@ -1,0 +1,1 @@
+<a href="eden_jump.php?id=<?php echo $links_id;?>&amp;project=<?php echo $project;?>" target="_blank"><?php  if ($links_gfx == "1"){?><img src="<?php echo $url_links.$links_picture;?>" border="0" alt="<?php echo $links_link;?>"><?php  } else {echo $links_name;}?></a><?php   if ($i>0){echo "<br><br>";}?><br>
